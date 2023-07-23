@@ -1,0 +1,10 @@
+cradle:
+  cabal:
+    - path: "app/Main.hs"
+      component: "ct202315:exe:ct202315"
+
+    - path: "src/Solver.hs"
+      component: "lib:ct202315"
+
+    - path: "src/Decoder.hs"
+      component: "lib:ct202315"
