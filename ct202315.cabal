@@ -13,11 +13,15 @@ library
     import:           warnings
 
     -- Modules exported by the library.
-    exposed-modules:  Solver,
+    exposed-modules:  Puzzle,
+                      Solver.Slow,
+                      Solver.Fast,
                       Decoder
 
     -- Other library packages from which modules are imported.
-    build-depends:    base ^>=4.17.0.0
+    build-depends:    base ^>=4.17.0.0,
+                      containers,
+                      extra
 
     -- Directories containing source files.
     hs-source-dirs:   src
@@ -33,9 +37,8 @@ executable ct202315
     main-is:          Main.hs
 
     -- Other library packages from which modules are imported.
-    build-depends:
-        base ^>=4.17.0.0,
-        ct202315
+    build-depends:    base ^>=4.17.0.0,
+                      ct202315
 
     -- Directories containing source files.
     hs-source-dirs:   app

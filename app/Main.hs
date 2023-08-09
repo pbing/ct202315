@@ -1,10 +1,12 @@
 -- c't 15/2023, pp. 74
-{-# OPTIONS_GHC -Wno-unused-imports #-}
 
 module Main where
 
-import Solver (solve, Puzzle)
+import System.Environment
 import Decoder (decode)
+import Puzzle (Puzzle)
+import qualified Solver.Fast as Fast (solve)
+import qualified Solver.Slow as Slow (solve)
 
 -- see "doc/3x3_ra_tsel_final.pdf"
 puzzleInput :: Puzzle
@@ -19,5 +21,13 @@ solution = ["51", "76", "72", "59", "62", "72",
 
 main :: IO ()
 main = do
-  print (solve puzzleInput)
-  -- print (decode solution)
+  progName <- getProgName
+  args <- getArgs
+  let usage = putStrLn ("Usage: " ++ progName ++ " { slow | fast | decode }")
+  if null args
+    then usage
+    else case head args of
+      "slow" -> print (Slow.solve puzzleInput)
+      "fast" -> print (Fast.solve puzzleInput)
+      "decode" -> print (decode solution)
+      _ -> usage

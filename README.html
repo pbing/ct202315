@@ -1,0 +1,38 @@
+<h1 id="ct-puzzle-202315">c’t puzzle 2023/15</h1>
+<h2 id="installation">Installation</h2>
+<pre class="shell"><code>git clone https://github.com/pbing/ct202315.git
+cd ct202315
+cabal build</code></pre>
+<h2 id="usage">Usage</h2>
+<p>Calculate the solution with brute-force.</p>
+<pre class="shell"><code>time cabal run ct202315 slow &gt; solution-slow.txt</code></pre>
+<p>Calculate the solution with fast algorithm.</p>
+<pre class="shell"><code>time cabal run ct202315 fast &gt; solution-fast.txt</code></pre>
+<p>Decode the solution.</p>
+<pre class="shell"><code>cabal run ct202315 decode &gt; decode.txt</code></pre>
+<h2 id="results">Results</h2>
+<p>with Macbook Pro 14-inch 2021 (Apple M1 Pro processor)</p>
+<ul>
+<li>Brute force solution: 45 min</li>
+<li>Fast solution:</li>
+</ul>
+<h2 id="references">References</h2>
+<ul>
+<li><a
+href="https://www.heise.de/select/ct/2023/15/2314415160191260453">Oliver
+Lau, Georg Schnurer, “Homeoffice-Bundle”, c’t 2023, Heft 15, S. 74
+ff.</a></li>
+<li><a
+href="https://www.heise.de/select/ct/2023/17/2314312462028898745">Oliver
+Lau, “Klein, aber oho²”, c’t 2023, Heft 17, S. 130 ff.</a></li>
+<li><a href="https://ct.de/ypg7">Puzzle as PDF</a></li>
+<li><a href="https://www.heise.de/s/Vx6M">Keith Brandt et al, “Using
+backtracking to solve the Scramble Squares Puzzle”.</a></li>
+<li><a
+href="https://liorsinai.github.io/coding/2020/06/26/scramble-puzzle.html">Lior
+Sinai, “Scramble Puzzle Solver in Python”, posted on 26 June
+2016.</a></li>
+<li><a
+href="https://en.wikipedia.org/wiki/Edge-matching_puzzle">“Edge-matching
+puzzle”, https://en.wikipedia.org/wiki/Edge-matching_puzzle</a></li>
+</ul>
